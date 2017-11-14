@@ -1,5 +1,5 @@
 #####################################################
-# Dockerfile to customeize PHP for Laravel project
+# Dockerfile to customeize NODE for GitLab Deployment
 # Based on the official NODE
 #####################################################
 
@@ -15,4 +15,5 @@ RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 # SSH
 RUN         apk add -U openssh-client --no-cache \
             && mkdir ~/.ssh \
-            && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+            && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config \
+            && apk cache clean
