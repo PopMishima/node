@@ -1,0 +1,18 @@
+#####################################################
+# Dockerfile to customeize PHP for Laravel project
+# Based on the official NODE
+#####################################################
+
+# Set the base image
+FROM        node:8.8.1-alpine
+
+# File Author / Maintainer
+LABEL       maintainer=info@adiwit.co.th
+
+# Change System TimeZone to Asia/Bangkok
+RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
+
+# SSH
+RUN         apk add -U openssh-client --no-cache \
+            && mkdir ~/.ssh \
+            && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
