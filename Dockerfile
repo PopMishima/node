@@ -16,4 +16,4 @@ RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 RUN         apk add -U openssh-client --no-cache \
             && mkdir ~/.ssh \
             && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config \
-            && apk cache clean
+            && rm -f /var/cache/apk/*
