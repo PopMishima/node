@@ -15,9 +15,3 @@ RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 # Install Bower & Grunt
 RUN         npm install -g bower grunt-cli && \
             echo '{ "allow_root": true }' > /root/.bowerrc
-
-# SSH
-RUN         apk add -U openssh-client --no-cache \
-            && mkdir ~/.ssh \
-            && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config \
-            && rm -f /var/cache/apk/*
