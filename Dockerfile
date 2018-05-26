@@ -29,7 +29,6 @@ RUN         apt-get update --fix-missing \
             && apt-get autoremove -fy \
             && apt-get clean \
             && apt-get autoclean -y \
-            && docker-php-source delete \
             && rm -rf /var/lib/apt/lists/*
 
 # Install Bower & Grunt
