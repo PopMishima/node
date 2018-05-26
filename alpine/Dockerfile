@@ -4,13 +4,17 @@
 #####################################################
 
 # Set the base image
-FROM        node:8.8.1-alpine
+FROM        node:alpine
 
 # File Author / Maintainer
 LABEL       maintainer=info@adiwit.co.th
 
 # Change System TimeZone to Asia/Bangkok
 RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
+
+# Install Bower & Grunt
+RUN         npm install -g bower grunt-cli && \
+            echo '{ "allow_root": true }' > /root/.bowerrc
 
 # SSH
 RUN         apk add -U openssh-client --no-cache \
