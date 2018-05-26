@@ -19,6 +19,13 @@ RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 RUN         apt-get update --fix-missing \
             && apt-get upgrade -fy \
             && apt-get dist-upgrade -fy \
+            && apt-get install --no-install-recommends -fy \
+                autoconf \
+                pkg-config \
+                apt-utils \
+                apt-transport-https \
+                git \
+                wget \
             && apt-get autoremove -fy \
             && apt-get clean \
             && apt-get autoclean -y \
