@@ -13,5 +13,5 @@ LABEL       maintainer=info@adiwit.co.th
 RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 
 # Install Bower & Grunt
-RUN         npm install -g bower grunt-cli && \
+RUN         npm install -g bower grunt-cli yarn && \
             echo '{ "allow_root": true }' > /root/.bowerrc
