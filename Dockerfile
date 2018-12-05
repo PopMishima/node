@@ -34,6 +34,7 @@ RUN         apt-get update --fix-missing \
 # Install Dependencies
 RUN         npm install -g bower \
                 grunt-cli \
+                yarn \
                 express \
                 https \
                 fs \

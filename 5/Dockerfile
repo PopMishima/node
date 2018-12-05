@@ -31,6 +31,13 @@ RUN         apt-get update --fix-missing \
             && apt-get autoclean -y \
             && rm -rf /var/lib/apt/lists/*
 
-# Install Bower & Grunt
-RUN         npm install -g bower grunt-cli yarn && \
-            echo '{ "allow_root": true }' > /root/.bowerrc
+# Install Dependencies
+RUN         npm install -g bower \
+                grunt-cli \
+                yarn \
+                express \
+                https \
+                fs \
+                crypto \
+                socket.io \
+            && echo '{ "allow_root": true }' > /root/.bowerrc

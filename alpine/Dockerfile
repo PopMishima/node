@@ -12,6 +12,13 @@ LABEL       maintainer=info@adiwit.co.th
 # Change System TimeZone to Asia/Bangkok
 RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 
-# Install Bower & Grunt
-RUN         npm install -g bower grunt-cli yarn && \
-            echo '{ "allow_root": true }' > /root/.bowerrc
+# Install Dependencies
+RUN         npm install -g bower \
+                grunt-cli \
+                yarn \
+                express \
+                https \
+                fs \
+                crypto \
+                socket.io \
+            && echo '{ "allow_root": true }' > /root/.bowerrc
