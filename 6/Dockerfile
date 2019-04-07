@@ -32,7 +32,8 @@ RUN         apt-get update --fix-missing \
             && rm -rf /var/lib/apt/lists/*
 
 # Install Dependencies
-RUN         npm install -g bower \
+RUN         npm install -g npm \
+                bower \
                 grunt-cli \
                 yarn \
                 express \

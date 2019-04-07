@@ -13,7 +13,8 @@ LABEL       maintainer=info@adiwit.co.th
 RUN         ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 
 # Install Dependencies
-RUN         npm install -g bower \
+RUN         npm install -g npm \
+                bower \
                 grunt-cli \
                 yarn \
                 express \
